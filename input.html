@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento input - Control de Tamaño</title>
+    <style>
+        #texto {
+            font-size: 20px;
+            transition: font-size 0.1s ease;
+        }
+        #control {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Modificar Tamaño del Texto (evento: input)</h2>
+
+<label for="control">Tamaño:</label>
+<input id="control" oninput="texto.style.fontSize = this.value + 'px';" type="range" min="10" max="80" value="20">
+
+<p id="texto">Este texto cambia de tamaño en tiempo real 😎</p>
+
+</body>
+</html>
