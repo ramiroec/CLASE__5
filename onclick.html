@@ -43,6 +43,10 @@
     <button onclick="mostrarMensaje()">
         Llamar función
     </button>
+
+    <button onclick="mostrarFecha()">
+        Botón para mostrar la fecha y hora actual
+    </button>
     
     <!-- Elemento que mostrará mensajes -->
     <div id="mensaje">
@@ -57,6 +61,28 @@
                 document.getElementById('texto').innerHTML = "¡Hola " + nombre + "! Bienvenido/a";
             }
         }
+
+        // NUEVO: Función para obtener y mostrar la fecha actual
+        function mostrarFecha() {
+            const ahora = new Date();
+            
+            // Convertimos la fecha a un formato legible en español
+            const opciones = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const fechaFormateada = ahora.toLocaleDateString('es-ES', opciones);
+            
+            // Insertamos la fecha en el contenedor de texto
+            document.getElementById('texto').innerHTML = "Fecha y hora actual:<br><strong>" + fechaFormateada + "</strong>";
+        }
+
+
     </script>
 </body>
 </html>
